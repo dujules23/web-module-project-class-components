@@ -6,12 +6,12 @@ import TodoList from './components/TodoList'
 const todo = [
   {
     task: "Organize Office",
-    id: Date.now(),
+    id: 1,
     completed: false,
   },
   {
     task: "Transcribe Music",
-    id: Date.now(),
+    id: 2,
     completed: false,
   }
 ]
@@ -70,6 +70,16 @@ class App extends React.Component {
     })
   }
 
+  // clear completed tasks
+
+  clearCompleted = () => {
+    console.log("clearing completed task")
+
+    this.setState({
+      ...this.state,
+      todo: this.state.todo.filter(item => !item.completed)
+    })
+  }
 
   render() {
     return (
@@ -78,7 +88,7 @@ class App extends React.Component {
           <h2>Your Todo's</h2>
           <TodoForm addItem={this.addItem}/>
         </div>  
-        <TodoList todo={this.state.todo} toggleCompleted={this.toggleCompleted} />
+        <TodoList todo={this.state.todo} toggleCompleted={this.toggleCompleted} clearCompleted={this.clearCompleted}/>
       </div>
     );
   }

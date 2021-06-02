@@ -12,14 +12,14 @@ const TodoList = props => {
     return(
         <div>
             {props.todo.map(item => (
-                <Todo key={item.id} item={item} />
+                <Todo key={item.id} item={item} toggleCompleted={props.toggleCompleted}/>
             ))}
-            <button>
+            <button onClick={() => props.clearCompleted() }>
                 Clear Completed
             </button>
         </div>
-    )
-}
+    );
+};
 
 
 export default TodoList;
