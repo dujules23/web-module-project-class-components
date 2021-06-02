@@ -43,10 +43,10 @@ class App extends React.Component {
           <h2>Your Todo's</h2>
           <TodoForm />
         </div>  
-        <TodoList />
+        <TodoList todo={this.state.todo} />
       </div>
     );
   }
 }
-
+console.log(todo)
 export default App;
