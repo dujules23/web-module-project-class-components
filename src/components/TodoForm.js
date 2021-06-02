@@ -10,9 +10,20 @@ class TodoForm extends React.Component {
 
     //handle the changes
 
-
+    handleChanges = e => {
+        //update state with each keystroke
+        
+        this.setState({
+            ...this.state,
+            newTodo: e.target.value
+        })
+    }
+    
     //handle submit
-
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.addItem(this.state.newTodo)
+    }
 
 
     //render form
@@ -20,8 +31,8 @@ class TodoForm extends React.Component {
     render() {
         return (
             <form>
-                <input />
-                <button>Add</button>
+                <input type="text" name="item" value={this.state.newTodo} onChange={this.handleChanges}/>
+                <button onClick={this.handleSubmit}>Add</button>
             </form>
         );
     };
