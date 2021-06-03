@@ -1,7 +1,9 @@
 import React from 'react';
 
 import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList'
+import TodoList from './components/TodoList';
+
+import './styles.scss';
 
 const todo = [
   {
@@ -83,8 +85,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div className="App">
+        <div className="header">
           <h2>Your Todo's</h2>
           <TodoForm addItem={this.addItem}/>
         </div>  

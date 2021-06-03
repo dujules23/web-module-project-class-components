@@ -32,9 +32,9 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <form>
+            <form className="form">
                 <input type="text" name="item" value={this.state.newTodo} onChange={this.handleChanges}/>
-                <button onClick={this.handleSubmit}>Add</button>
+                <button className="button" onClick={this.handleSubmit}>Add</button>
             </form>
         );
     };
